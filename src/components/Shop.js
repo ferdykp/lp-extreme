@@ -14,7 +14,7 @@ export default function Shop() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a
-            href="https://wa.me/your-number"
+            href="https://wa.me/+6285708774916"
             target="_blank"
             rel="noreferrer"
             className="w-full sm:w-auto bg-[#25D366] text-white px-8 py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(37,211,102,0.2)]"

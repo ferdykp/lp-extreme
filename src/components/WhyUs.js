@@ -58,17 +58,17 @@ export default function WhyUs() {
       className="py-24 bg-zinc-950 border-t border-white/5 relative overflow-hidden"
     >
       {/* Background Subtle Ambient Light - Disesuaikan posisinya ke tengah atas */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[800px] h-[500px] bg-red-500/5 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 w-200 h-125 bg-red-500/5 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* BAGIAN ATAS: Header Centered */}
         <div className="flex flex-col items-center text-center space-y-6 mb-16 reveal-on-scroll">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-[2px] bg-red-500 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+            <div className="w-12 h-0.5 bg-red-500 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
             <span className="text-xs font-bold tracking-widest text-red-500 uppercase">
               THE EXTREME VALUE
             </span>
-            <div className="w-12 h-[2px] bg-red-500 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.8)] hidden sm:block"></div>
+            <div className="w-12 h-0.5 bg-red-500 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.8)] hidden sm:block"></div>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white leading-none">

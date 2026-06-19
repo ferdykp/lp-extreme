@@ -19,7 +19,7 @@ export default function Navbar() {
         id="navbar"
         className={`w-full transition-all duration-500 border ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isScrolled
-            ? "max-w-5xl bg-zinc-950/70 backdrop-blur-xl border-white/10 rounded-full px-6 py-3 shadow-[0_20px_40px_rgba(0,0,0,0.7),_inset_0_1px_0_rgba(255,255,255,0.05)]"
+            ? "max-w-5xl bg-zinc-950/70 backdrop-blur-xl border-white/10 rounded-full px-6 py-3 shadow-[0_20px_40px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.05)]"
             : "max-w-7xl bg-transparent border-transparent px-4 py-4"
         }`}
       >
@@ -77,7 +77,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer Overlay */}
       <div
-        className={`fixed inset-0 top-[88px] z-40 bg-zinc-950/95 backdrop-blur-lg md:hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-t border-white/5 ${
+        className={`fixed inset-0 top-22 z-40 bg-zinc-950/95 backdrop-blur-lg md:hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-t border-white/5 ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
             : "opacity-0 pointer-events-none -translate-y-4"
