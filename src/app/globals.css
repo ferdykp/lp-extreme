@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Tambahkan ini di bawah baris @import */
 @layer utilities {
   .reveal-on-scroll {
     animation: fadeInUp linear both;
@@ -20,27 +19,25 @@
   }
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Memaksa color scheme browser ke tingkat sistem.
+  Ini akan mencegah browser HP melakukan 'Force Invert' warna.
+*/
+html {
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Aturan dasar body global yang sinkron dengan tema gelap ekstrem (Zinc-950)
+  dan mempertahankan font inter/syncopate yang sudah kamu set di layout.js
+*/
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #09090b !important; /* Sengaja di-lock ke zinc-950 */
+  color: #fafafa !important; /* Sengaja di-lock ke zinc-50 */
+}
+
+/* Mencegah intervensi browser mobile jika HP user berada di mode terang/light */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #09090b !important;
+    color: #fafafa !important;
+  }
 }
