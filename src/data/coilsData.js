@@ -81,17 +81,51 @@ export const coilsData = [
 
 export const cottonData = [
   {
-    id: "c1",
-    name: "Extreme Premium Cotton v1",
-    pack: "Regular Pack",
-    desc: "Kapas organik murni tanpa pemutih kimia. Memiliki daya serap super cepat yang mencegah risiko dry hit meskipun pada watt tinggi.",
-    price: "Rp 15.000",
+    id: "cotton-tropical",
+    name: "TROPICAL ORGANIC COTTON",
+    emoji: "🌴",
+    titleColor: "text-emerald-400",
+    icon: "fa-tree",
+    iconColor: "text-emerald-500",
+    features: [
+      "Clean Flavor Delivery",
+      "Fast Liquid Absorption",
+      "Premium Organic Fiber",
+    ],
+    description:
+      "Menghasilkan rasa liquid yang bersih dengan daya serap cepat untuk penggunaan intensif.",
+    price: "Rp 35.000",
   },
   {
-    id: "c2",
-    name: "Extreme Premium Cotton v2",
-    pack: "Pro Pack (Longer Fiber)",
-    desc: "Serat kapas lebih panjang untuk durabilitas ekstra. Menjaga rasa liquid tetap bersih, konstan, dan murni hingga berhari-hari.",
-    price: "Rp 25.000",
+    id: "cotton-octopus",
+    name: "OCTOPUS ORGANIC COTTON",
+    emoji: "🐙",
+    titleColor: "text-indigo-400",
+    icon: "fa-disease", // Mempertahankan icon asli html kamu
+    iconColor: "text-indigo-500",
+    features: [
+      "Dense Fiber Structure",
+      "Long Lasting Performance",
+      "Pure Organic Cotton",
+    ],
+    description:
+      "Serat lebih padat dan tahan lama, cocok untuk penggunaan harian dengan stabilitas tinggi.",
+    price: "Rp 35.000",
+  },
+  {
+    id: "cotton-hell",
+    name: "HELL ORGANIC COTTON",
+    emoji: "🔥",
+    titleColor: "text-orange-400",
+    icon: "fa-fire-flame-curved",
+    iconColor: "text-orange-500",
+    features: [
+      "Maximum Flavor Output",
+      "Premium Fiber Selection",
+      "Extreme Performance",
+    ],
+    description:
+      "Dirancang untuk memaksimalkan flavor dan performa coil pada berbagai setup RDA maupun RTA.",
+    price: "Rp 35.000",
   },
 ];
