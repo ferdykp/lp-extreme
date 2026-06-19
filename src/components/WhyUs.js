@@ -98,7 +98,7 @@ export default function WhyUs() {
               </div>
 
               {/* Decorative Accent on bottom corner of the card */}
-              <div className="w-6 h-[1px] bg-zinc-800 mt-8 transition-all duration-500 group-hover:w-12 group-hover:bg-red-500"></div>
+              <div className="w-6 h-px bg-zinc-800 mt-8 transition-all duration-500 group-hover:w-12 group-hover:bg-red-500"></div>
             </div>
           ))}
         </div>
