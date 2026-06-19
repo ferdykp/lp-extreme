@@ -15,13 +15,18 @@ export const metadata = {
   openGraph: {
     title: "EXTREME PROJECT | Premium Prebuilt Coil",
     description: "Experience The Next Level Of Flavor.",
-    images: ["/assets/og-preview.jpg"],
+    // images: ["/assets/og-preview.jpg"],
   },
+};
+
+export const viewport = {
+  themeColor: "#09090b", // Menyesuaikan warna address bar HP menjadi hitam zinc-950
+  colorScheme: "dark", // Memaksa browser tahu bahwa ini web dark-mode murni
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className="scroll-smooth">
+    <html lang="id" className="dark bg-zinc-950 text-white scroll-smooth">
       <head>
         <link
           rel="stylesheet"
