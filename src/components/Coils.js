@@ -2,14 +2,12 @@ import { coilsData } from "@/data/coilsData";
 import ElegantCard from "./ElegantCard";
 
 export default function Coils() {
-  // Pemetaan icon & warna teks label berdasarkan key profil untuk menyamakan dengan HTML
   const configMap = {
     flavor: { icon: "fa-fire text-red-500", label: "Flavor" },
     sweetness: { icon: "fa-candy-cane text-pink-400", label: "Sweetness" },
     throatHit: { icon: "fa-wind text-sky-400", label: "Throat Hit" },
   };
 
-  // Pengaman warna bintang di Tailwind v4 agar terbaca compiler
   const starColorMap = {
     "text-zinc-300": "text-zinc-300",
     "text-yellow-500": "text-yellow-500",
@@ -43,7 +41,7 @@ export default function Coils() {
               borderColor={coil.borderColor}
             >
               {/* Badge & Dot */}
-              <div className="flex justify-between items-start mb-6">
+              <div className="flex justify-between items-start mb-5">
                 <span
                   className={`px-3 py-1 text-xs font-bold rounded-full uppercase tracking-wider ${coil.badgeBg}`}
                 >
@@ -57,6 +55,17 @@ export default function Coils() {
                   ></div>
                 </div>
               </div>
+
+              {/* Gambar Product Tambahan (Modern Showcase dengan overlay redup agar estetik) */}
+              {coil.image && (
+                <div className="relative w-full h-68 mb-5 overflow-hidden rounded-xl border border-white/5 bg-zinc-950">
+                  <img
+                    src={coil.image}
+                    alt={coil.name}
+                    className="w-full h-full object-cover opacity-85 transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              )}
 
               {/* Product Info */}
               <h3 className="text-2xl font-bold mb-1 text-white">

@@ -9,6 +9,7 @@ export const coilsData = [
     starColor: "text-zinc-300",
     name: "Baby Alien Ni80",
     spec: "Dia: 3.0mm • 5 Wrap",
+    image: "/assets/baby1-nobg.png", // Tambahkan ini
     profile: { flavor: 3, sweetness: 1, throatHit: 3 },
     description:
       "Flavor paling tajam dengan throat hit kuat. Cocok untuk pengguna yang menyukai sensasi tegas dan rasa liquid yang keluar secara maksimal.",
@@ -24,6 +25,7 @@ export const coilsData = [
     starColor: "text-yellow-500",
     name: "Baby Alien Ni80",
     spec: "Dia: 3.0mm • 5 Wrap",
+    image: "/assets/baby2.jpeg", // Tambahkan ini
     profile: { flavor: 3, sweetness: 2, throatHit: 1 },
     description:
       "Menghasilkan flavor sangat kuat dengan karakter liquid yang lebih manis dan smooth saat digunakan harian.",
@@ -39,6 +41,7 @@ export const coilsData = [
     starColor: "text-pink-500",
     name: "Fused Clapton Ni80",
     spec: "Dia: 3.0mm • 6 Wrap",
+    image: "/assets/fused3.jpeg", // Tambahkan ini
     profile: { flavor: 2, sweetness: 1, throatHit: 3 },
     description:
       "Kombinasi flavor bersih dengan throat hit yang dominan untuk sensasi vaping yang lebih agresif.",
@@ -54,6 +57,7 @@ export const coilsData = [
     starColor: "text-purple-500",
     name: "Fused Clapton Ni80",
     spec: "Dia: 2.5mm • 5 Wrap",
+    image: "/assets/fused4.jpeg", // Tambahkan ini
     profile: { flavor: 2, sweetness: 3, throatHit: 1 },
     description:
       "Pilihan terbaik bagi pecinta liquid manis. Mengangkat sweetness lebih maksimal dengan sensasi inhale yang halus.",
@@ -69,6 +73,7 @@ export const coilsData = [
     starColor: "text-zinc-200",
     name: "Fused Clapton Ni80",
     spec: "Dia: 3.0mm",
+    image: "/assets/fused5.jpeg", // Tambahkan ini
     profile: { flavor: 2, sweetness: 2, throatHit: 3 },
     description:
       "Keseimbangan antara flavor dan sweetness dengan throat hit yang kuat untuk pengalaman vaping yang solid.",
@@ -84,6 +89,7 @@ export const coilsData = [
     starColor: "text-red-500",
     name: "Fused Clapton Ni80",
     spec: "Dia: 2.5mm • 6 Wrap",
+    image: "/assets/fused6.jpeg", // Tambahkan ini
     profile: { flavor: 2, sweetness: 2, throatHit: 2 },
     description:
       "Performa paling seimbang. Cocok untuk berbagai jenis liquid dan penggunaan harian.",
@@ -91,13 +97,12 @@ export const coilsData = [
   },
 ];
 
-// Tetap biarkan data cottonData di paling bawah jika ada...
-
 export const cottonData = [
   {
     id: "cotton-tropical",
     name: "TROPICAL ORGANIC COTTON",
     emoji: "🌴",
+    image: "/assets/cotton-tropical.jpeg", // Tambahkan ini
     titleColor: "text-emerald-400",
     icon: "fa-tree",
     iconColor: "text-emerald-500",
@@ -114,8 +119,9 @@ export const cottonData = [
     id: "cotton-octopus",
     name: "OCTOPUS ORGANIC COTTON",
     emoji: "🐙",
+    image: "/assets/octopus.jpeg", // Tambahkan ini
     titleColor: "text-indigo-400",
-    icon: "fa-disease", // Mempertahankan icon asli html kamu
+    icon: "fa-disease",
     iconColor: "text-indigo-500",
     features: [
       "Dense Fiber Structure",
@@ -130,6 +136,7 @@ export const cottonData = [
     id: "cotton-hell",
     name: "HELL ORGANIC COTTON",
     emoji: "🔥",
+    image: "/assets/cotton-hell.jpeg", // Tambahkan ini
     titleColor: "text-orange-400",
     icon: "fa-fire-flame-curved",
     iconColor: "text-orange-500",
