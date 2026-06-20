@@ -2,10 +2,27 @@ import { coilsData } from "@/data/coilsData";
 import ElegantCard from "./ElegantCard";
 
 export default function Coils() {
+  // Pemetaan icon & warna teks label berdasarkan key profil untuk menyamakan dengan HTML
+  const configMap = {
+    flavor: { icon: "fa-fire text-red-500", label: "Flavor" },
+    sweetness: { icon: "fa-candy-cane text-pink-400", label: "Sweetness" },
+    throatHit: { icon: "fa-wind text-sky-400", label: "Throat Hit" },
+  };
+
+  // Pengaman warna bintang di Tailwind v4 agar terbaca compiler
+  const starColorMap = {
+    "text-zinc-300": "text-zinc-300",
+    "text-yellow-500": "text-yellow-500",
+    "text-pink-500": "text-pink-500",
+    "text-purple-500": "text-purple-500",
+    "text-zinc-200": "text-zinc-200",
+    "text-red-500": "text-red-500",
+  };
+
   return (
     <section
       id="coils"
-      className="py-24 relative bg-zinc-900/20 border-y border-white/5"
+      className="py-24 relative bg-zinc-900/30 border-y border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal-on-scroll">
@@ -13,8 +30,8 @@ export default function Coils() {
             EXTREME COIL COLLECTION
           </h2>
           <p className="text-zinc-400 max-w-2xl mx-auto">
-            Sistem performa presisi tinggi untuk berbagai jenis perangkat
-            atomizermu.
+            Precision engineering for every vaping style. Discover your perfect
+            match.
           </p>
         </div>
 
@@ -22,24 +39,27 @@ export default function Coils() {
           {coilsData.map((coil) => (
             <ElegantCard
               key={coil.id}
-              borderColor={`border-t-4 ${coil.borderColor}`}
+              className="flex flex-col h-full border-t-4"
+              borderColor={coil.borderColor}
             >
               {/* Badge & Dot */}
               <div className="flex justify-between items-start mb-6">
                 <span
-                  className={`px-3 py-1 text-xs font-bold rounded-full uppercase tracking-wider transition-all duration-300 group-hover:scale-105 ${coil.badgeBg}`}
+                  className={`px-3 py-1 text-xs font-bold rounded-full uppercase tracking-wider ${coil.badgeBg}`}
                 >
                   {coil.edition}
                 </span>
-                <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center border border-white/5">
+                <div
+                  className={`w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center border ${coil.dotBorder || "border-white/5"}`}
+                >
                   <div
-                    className={`w-3 h-3 rounded-full transition-all duration-500 group-hover:scale-150 ${coil.dotColor}`}
+                    className={`w-3 h-3 rounded-full ${coil.dotColor}`}
                   ></div>
                 </div>
               </div>
 
               {/* Product Info */}
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-white transition-colors">
+              <h3 className="text-2xl font-bold mb-1 text-white">
                 {coil.name}
               </h3>
               <p className="text-sm text-zinc-500 font-mono mb-6">
@@ -47,48 +67,58 @@ export default function Coils() {
               </p>
 
               {/* Profile Performance Rating */}
-              <div className="bg-zinc-950/50 rounded-xl p-4 mb-6 space-y-3 border border-transparent group-hover:border-white/5 transition-colors">
+              <div className="bg-zinc-950/50 rounded-xl p-4 mb-6 space-y-3">
                 <h4 className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-2">
                   Performance Profile
                 </h4>
-                {Object.entries(coil.profile).map(([key, value]) => (
-                  <div
-                    key={key}
-                    className="flex justify-between items-center text-sm capitalize"
-                  >
-                    <span className="text-zinc-300">
-                      {key.replace(/([A-Z])/g, " $1")}
-                    </span>
-                    <div className="text-red-500 space-x-1">
-                      {[...Array(3)].map((_, i) => (
-                        <i
-                          key={i}
-                          className={`${i < value ? "fa-solid" : "fa-regular"} fa-star text-xs transition-transform duration-300 group-hover:scale-110`}
-                          style={{ transitionDelay: `${i * 100}ms` }}
-                        />
-                      ))}
+                {Object.entries(coil.profile).map(([key, value]) => {
+                  const currentConfig = configMap[key] || {
+                    icon: "fa-star",
+                    label: key,
+                  };
+                  return (
+                    <div
+                      key={key}
+                      className="flex justify-between items-center text-sm"
+                    >
+                      <span className="text-zinc-300 flex items-center gap-2">
+                        <i className={`fa-solid ${currentConfig.icon} w-4`}></i>
+                        {currentConfig.label}
+                      </span>
+                      <div className="space-x-1 flex">
+                        {[...Array(3)].map((_, i) => {
+                          const isActive = i < value;
+                          const activeStarClass =
+                            starColorMap[coil.starColor] || "text-zinc-300";
+
+                          return (
+                            <i
+                              key={i}
+                              className={`text-xs ${
+                                isActive
+                                  ? `fa-solid fa-star ${activeStarClass}`
+                                  : "fa-regular fa-star text-zinc-600"
+                              }`}
+                            />
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Description */}
               <p className="text-sm text-zinc-400 leading-relaxed mb-8 grow">
-                <span className="text-white font-semibold">Karakter: </span>
+                <span className="text-white font-semibold">Karakter:</span>{" "}
                 {coil.description}
               </p>
 
-              {/* Price & Action CTA */}
-              <div className="mt-auto flex items-center justify-between border-t border-white/5 pt-6">
-                <span className="text-xl font-bold group-hover:text-white transition-colors">
+              {/* Price Tag */}
+              <div className="mt-auto border-t border-white/5 pt-6">
+                <span className="text-xl font-bold text-white">
                   {coil.price}
                 </span>
-                <a
-                  href="#shop"
-                  className="bg-red-500 text-white px-5 py-2 rounded-full text-xs font-semibold hover:bg-red-600 transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(239,68,68,0.2)] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)]"
-                >
-                  Beli
-                </a>
               </div>
             </ElegantCard>
           ))}
