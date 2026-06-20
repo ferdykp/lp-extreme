@@ -47,7 +47,7 @@ export default function Shop() {
           href: "https://vt.tiktok.com/ZSQtDfykJ/?page=Mall",
         },
         {
-          name: "EXTREME PROJECT 3",
+          name: "EXTREME PROJECT 4",
           href: "https://vt.tiktok.com/ZSQtDjLVH/?page=Mall",
         },
       ],
