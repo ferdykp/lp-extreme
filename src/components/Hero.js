@@ -10,9 +10,22 @@ export default function Hero() {
 
       <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
         {/* Badge Animation */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium mb-8 animate-bounce">
-          <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-          <span>100% Handcrafted Premium Quality</span>
+        <div className="inline-flex flex-col items-center gap-1.5 px-5 py-3 rounded-2xl bg-zinc-900 border border-white/5 mb-8 text-center">
+          {/* Baris Atas: Indikator + Teks EXTREME */}
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </span>
+            <span className="text-xs font-bold tracking-widest text-white">
+              EXTREME
+            </span>
+          </div>
+
+          {/* Baris Bawah: Tagline */}
+          <span className="text-[10px] text-zinc-500 font-medium tracking-wide">
+            Precision. Performance. Innovation
+          </span>
         </div>
 
         {/* Text Gradient & Reveal */}

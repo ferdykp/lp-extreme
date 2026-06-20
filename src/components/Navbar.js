@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,25 +25,28 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between">
-          {/* Logo Brand */}
           <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-full bg-linear-to-br from-red-500 to-red-600 flex items-center justify-center shadow-[0_0_15px_rgba(239,68,68,0.4)] transition-transform duration-300 group-hover:scale-110">
-              <i className="fa-solid fa-bolt text-white text-sm"></i>
-            </div>
-            <span className="font-display tracking-widest text-sm sm:text-base font-bold bg-linear-to-b from-white to-zinc-400 bg-clip-text text-transparent">
-              EXTREME PROJECT
-            </span>
+            <Image
+              src="/assets/logo.png"
+              alt="Extreme Project Logo"
+              // Berikan angka estimasi ukuran aslinya di sini
+              width={200}
+              height={60}
+              // Kunci ukurannya di sini: w-[130px] dan h-auto
+              className="w-32.5 h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-1 bg-zinc-900/40 border border-white/5 p-1 rounded-full backdrop-blur-xs">
+          <div className="hidden md:flex items-center gap-2 p-3 bg-zinc-900/40 border border-white/5 rounded-full backdrop-blur-xs">
             {["About", "Coils", "Cotton", "Why Us", "Shop"].map((item) => {
               const href = `#${item.toLowerCase().replace(" ", "-")}`;
               return (
                 <a
                   key={item}
                   href={href}
-                  className="px-4 py-1.5 rounded-full text-xs font-medium text-zinc-400 transition-all duration-300 hover:text-white hover:bg-white/5 relative group"
+                  className="px-4 py-1.5 rounded-full text-md font-medium text-zinc-400 transition-all duration-300 p-3 hover:text-white hover:bg-white/5 relative group"
                 >
                   {item}
                   {/* Indicator Dot on Hover */}
